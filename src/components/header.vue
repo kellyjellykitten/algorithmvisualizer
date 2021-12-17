@@ -7,6 +7,7 @@
         target="_blank"
         ><button><b>GITHUB</b></button></a
       >
+
       <div id="main">
         <div class="img"></div>
         <div>
@@ -15,6 +16,17 @@
       </div>
       <span id="sel"><slot name="select"></slot></span>
     </div>
+     <modalbutton
+            type="button"
+            class="btn"
+            @click="showModal"
+          >
+            Open Tutorial!
+        </modalbutton>
+          <Modal
+            v-show="isModalVisible"
+            @close="closeModal"
+          />
     <article>
       <section>
         <h4>Select an algorithm</h4>
@@ -60,13 +72,30 @@
 </template>
 
 <script>
+import Modal from './modal.vue';
+
 export default {
-  components: {},
+  components: {
+    Modal
+  },
   props:{
     alg: {
       type: String,
       required: true
     }
+  },
+  data () {
+    return {
+        isModalVisible: false,
+      };
+  },
+  methods: {
+    showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
   }
 };
 </script>
@@ -109,6 +138,23 @@ button {
   background-color: white;
   margin: none;
   outline: none;
+}
+modalbutton {
+  width: 200px;
+  height: 25px;
+  border-radius: 2em;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  border: 1px solid #4fc08d;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  color: #4fc08d;
+  font-size: 25px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
 }
 #header {
   display: flex;
