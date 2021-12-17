@@ -5,6 +5,7 @@
     <slot name="button"></slot>
     <br />
     <slot name="description"></slot>
+    <p>Click "Instant Path" for a quick path</p>
     <br />
     <slot name="controls"></slot>
     <br />
@@ -21,7 +22,6 @@
     </div>
 
     <br />
-    <p>Press INSTANT PATH for a quick path</p>
     <p
       id="inf"
     >Click the mouse button and move the pointer to draw walls. Click the mouse button again to stop drawing.</p>

@@ -37,17 +37,17 @@
       </section>
     </article>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target=_blank><img src="../../public/wikipedia.png" ></a> 
+      <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target="_blank"><img src="../../public/wikipedia.png" ></a> 
       <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is slow, but more versatile</p>
 
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Breadth First Search'" href="https://en.wikipedia.org/wiki/Breadth-first_search" target=_blank><img src="../../public/wikipedia.png" ></a> 
+      <a id="wiki" v-if="alg == 'Breadth First Search'" href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank"><img src="../../public/wikipedia.png" ></a> 
       <p id="note" v-if="alg == 'Breadth First Search'">This algorithm is very fast, but can only be applied to unweighted graph</p>
 
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Depth First Search'" href="https://en.wikipedia.org/wiki/Depth-first_search" target=_blank><img src="../../public/wikipedia.png" ></a> 
+      <a id="wiki" v-if="alg == 'Depth First Search'" href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank"><img src="../../public/wikipedia.png" ></a> 
       <p id="note" v-if="alg == 'Depth First Search'">This algorithm is slower, only good if the graph is mostly occupied</p>
 
     </div>

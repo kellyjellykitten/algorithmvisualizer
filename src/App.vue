@@ -2,9 +2,9 @@
   <div>
     <div id="line"></div>
 
-    <head-box v-bind:alg="algorithm">
+    <head-box :alg="algorithm">
       <template v-slot:select>
-        <select class="select" v-model="algorithm" >
+        <select class="dropdown" v-model="algorithm" >
           <option style="color: #4fc08d;" hidden>{{ algorithm }}</option>
           <option>Breadth First Search</option>
           <option>Depth First Search</option>
@@ -56,7 +56,8 @@
         </template>
         <template v-slot:description>
           <p v-if="algorithm == 'Depth First Search'">This may or may not give the shortest path</p>
-          <p v-else-if="algorithm == 'SELECT AN ALGORITHM'">SELECT an algorithm and press VISUALIZE</p>
+          <p v-else-if="algorithm == 'SELECT AN ALGORITHM'">Select an algorithm and click "Visualize"
+          </p>
           <p v-else>This gives the shortest path possible</p>
         </template>
 
@@ -81,7 +82,8 @@ import grid from "./components/grid";
 import content from "./components/content";
 import header from "./components/header";
 import footer from "./components/footer";
-import { eventBus } from "../src/main";
+import { emitter } from "./eventBus"
+
 export default {
   components: {
     "box-grid": grid,
@@ -103,7 +105,7 @@ export default {
     };
   },
   created() {
-    eventBus.$on("stop", data => {
+    emitter.on("stop", data => {
       this.path = data.p;
       this.dist = data.d;
       this.count = 0;
@@ -112,7 +114,7 @@ export default {
       this.visitedNodes = null;
       this.i = -1;
     });
-    eventBus.$on("visited", data => {
+    emitter.on("visited", data => {
       this.visitedNodes = data;
     })
     
@@ -288,6 +290,19 @@ export default {
   border: #4fc08d;
   color: white;
   cursor: pointer;
+}
+.dropdown {
+  background-color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 95%;
+  text-align: center;
+  margin: 0;
+  text-overflow: ellipsis;
+  width: 220px;
+  height: 40px;
+  border: 1px solid #4fc08d;
+  border-radius: 2em;
+  outline: none;
 }
 #nc {
   position: relative;

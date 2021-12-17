@@ -1,6 +1,6 @@
 <template>
   <div id="foot">
-    <a href="#" target=_blank style="text-decoration: none; color: inherit;"><div id="logo"></div></a>
+    <a href="#" target="_blank" style="text-decoration: none; color: inherit;"><div id="logo"></div></a>
     <div>by </div>
   </div>
 </template>

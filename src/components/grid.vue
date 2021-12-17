@@ -23,7 +23,7 @@
 
 <script>
 import Queue from "@/Queue.js";
-import {eventBus} from '../main'
+import { emitter } from "../eventBus"
 export default {
   components: {},
   // props: ['row', 'column', 'si', 'sj', 'di', 'dj'],
@@ -156,13 +156,13 @@ export default {
       // console.log(this.nodes);
     },
     clearCanvas(){
-      eventBus.$emit("stop", {p: null, d: "∞"});
+      emitter.emit("stop", {p: null, d: "∞"});
       this.q = new Queue();
       this.visitedNodes = [];
       this.i = 0;
       this.edges = [];
       // this.instant_result = false;
-      eventBus.$emit("inst", false);
+      emitter.emit("inst", false);
       for (let i = 0; i <= 21; i++) {
         for (let j = 0; j <= 37; j++) {
           if(document.getElementById(String(i) + String("-") + String(j)).className == "visited"){
@@ -184,7 +184,7 @@ export default {
       }
     },
     clearPath(){
-      eventBus.$emit("stop", {p: null, d: "∞"});
+      emitter.emit("stop", {p: null, d: "∞"});
       this.q = new Queue();
       this.visitedNodes = [];
       this.i = 0;
@@ -272,7 +272,7 @@ export default {
               if ((node.pi == this.di) && (node.pj == this.dj)) {
                 this.pathArr = this.path[this.di][this.dj]
                 this.distance = node.distance;
-                eventBus.$emit("stop", {p: this.pathArr, d: this.distance});
+                emitter.emit("stop", {p: this.pathArr, d: this.distance});
                 // for(let i= 1; i<this.pathArr.length-1; i++){
                 //   document.getElementById(this.pathArr[i].name).className = "path"
                   // document.getElementById(this.pathArr[0].name).className = "sd"
@@ -363,11 +363,11 @@ export default {
           }
     }
     if(this.i == 0){
-      eventBus.$emit("visited", this.visitedNodes);
+      emitter.emit("visited", this.visitedNodes);
     }
     
     }else{
-      eventBus.$emit("stop", {p: this.path[this.di][this.dj], d: this.nodes[this.di][this.dj].distance});
+      emitter.emit("stop", {p: this.path[this.di][this.dj], d: this.nodes[this.di][this.dj].distance});
     }
     
     this.i++;
