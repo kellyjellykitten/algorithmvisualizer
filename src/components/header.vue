@@ -16,17 +16,12 @@
       </div>
       <span id="sel"><slot name="select"></slot></span>
     </div>
-     <modalbutton
-            type="button"
-            class="btn"
-            @click="showModal"
-          >
-            Open Tutorial!
-        </modalbutton>
-          <Modal
-            v-show="isModalVisible"
-            @close="closeModal"
-          />
+    
+    <button class="modalbutton" id="show-modal" @click="showModal = true">Open Tutorial!</button>
+    <transition name="modal">
+      <Modal v-if="showModal" @close="showModal = false"/>
+    </transition>
+
     <article>
       <section>
         <h4>Select an algorithm</h4>
@@ -86,17 +81,17 @@ export default {
   },
   data () {
     return {
-        isModalVisible: false,
+        showModal: false,
       };
   },
-  methods: {
-    showModal() {
-        this.isModalVisible = true;
-      },
-      closeModal() {
-        this.isModalVisible = false;
-      }
-  }
+  // methods: {
+  //   showModal() {
+  //       this.isModalVisible = true;
+  //     },
+  //     closeModal() {
+  //       this.isModalVisible = false;
+  //     }
+  // }
 };
 </script>
 
@@ -139,7 +134,7 @@ button {
   margin: none;
   outline: none;
 }
-modalbutton {
+.modalbutton {
   width: 200px;
   height: 25px;
   border-radius: 2em;

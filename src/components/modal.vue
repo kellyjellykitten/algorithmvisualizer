@@ -1,7 +1,12 @@
 <template>
-    <transition name="modal">
-        <div class="modal-backdrop">
-            <div class="model-container">
+    <div class="modal-backdrop">
+        <div class="modal-wrapper">
+            
+            <div class="modal-container">
+                <div class="icon">
+                    <i @click="close" class="fas fa-window-close"></i>
+                </div>
+                
 
                 <!-- Header -->
                 <div v-if="page == 1">
@@ -9,13 +14,6 @@
                         <slot name="header">
                             This is the first page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 2">
@@ -23,13 +21,6 @@
                         <slot name="header">
                             This is the second page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 3">
@@ -37,13 +28,6 @@
                         <slot name="header">
                             This is the third page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 4">
@@ -51,13 +35,6 @@
                         <slot name="header">
                             This is the fourth page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 5">
@@ -65,13 +42,6 @@
                         <slot name="header">
                             This is the fifth page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 6">
@@ -79,13 +49,6 @@
                         <slot name="header">
                             This is the sixth page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
                 <div v-if="page == 7">
@@ -93,13 +56,6 @@
                         <slot name="header">
                             This is the seventh page!
                         </slot>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            @click="close"
-                        >
-                            x
-                        </button>
                     </div>
                 </div>
 
@@ -211,9 +167,10 @@
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
-    </transition>
+    </div> 
 </template>
 
 <script>
@@ -243,54 +200,88 @@
 </script>
 
 
-<style scoped>
+<style>
 .modal-backdrop {
   position: fixed;
   z-index: 9998;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: table;
+  
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .modal-container {
   background-color: #fff;
+  max-width: 640px;
+  width: 70%;
+  margin: 0px auto;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow-x: auto;
-  display: flex;
   flex-direction: column;
-  padding: 64px 16px;
+  padding: 20px 30px;
+  font-family: "Source Sans Pro", sans-serif;
+  
 }
 
 .modal-header,
 .modal-footer {
     padding: 15px;
     display: flex;
+    justify-content: center;
 }
 
 .modal-body {
-    position: relative;
+    display: flex;
     padding: 20px 10px;
+    justify-content: center;
+}
+
+.icon {
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    align-content: right;
+    background-color: white;
+}
+
+i {
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+i:hover {
+    color: crimson;
 }
 
 .modal-default-button {
   display: block;
   margin-top: 1rem;
+  color: white;
+  background: #4AAE9B;
+  border: 1px solid #4AAE9B;
+  border-radius: 2px;
 }
 
 .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: inline-block;
     border: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 8px 16px;
     cursor: pointer;
     font-weight: bold;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
     color: #4AAE9B;
     background: transparent;
 }
@@ -314,71 +305,3 @@
   opacity: 0;
 }
 </style>
-
-
-
-<!-- <style>
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal {
-    background: #FFFFFF;
-    box-shadow: 2px 2px 20px 1px;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .modal-header,
-  .modal-footer {
-    padding: 15px;
-    display: flex;
-  }
-
-  .modal-header {
-    position: relative;
-    border-bottom: 1px solid #eeeeee;
-    color: #4AAE9B;
-    justify-content: space-between;
-  }
-
-  .modal-footer {
-    border-top: 1px solid #eeeeee;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .modal-body {
-    position: relative;
-    padding: 20px 10px;
-  }
-
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #4AAE9B;
-    background: transparent;
-  }
-
-  .btn-green {
-    color: white;
-    background: #4AAE9B;
-    border: 1px solid #4AAE9B;
-    border-radius: 2px;
-  }
-</style> -->
