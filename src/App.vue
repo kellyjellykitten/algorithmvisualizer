@@ -269,6 +269,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 .button {
   position: relative;
   width: 100px;
@@ -336,6 +339,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  width: 100%;
 }
 p {
   position: relative;
@@ -387,11 +391,68 @@ p {
   background: linear-gradient(90deg,rgb(112, 218, 245),#defb8e 50%,rgb(52, 228, 52));
   /* height: 0.5em; */
   padding: 1px;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: none;
-  /* text-align: center; */
-  /* color: #fff; */
-  /* font-size: 1.5rem; */
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  /* Extra small devices (phones, 600px and down) */
+  body {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  body {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Medium devices (landscape tablets, 768px and up) */
+  body {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Large devices (laptops/desktops, 992px and up) */
+  body {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  body {
+    width: 100%
+  }
 }
 </style>
+
+<!--
+@media only screen and (max-width: 600px) {
+  /* Extra small devices (phones, 600px and down) */
+  * {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  * {
+    width: 100%
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* Medium devices (landscape tablets, 768px and up) */
+  * {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* Large devices (laptops/desktops, 992px and up) */
+  * {
+    width: 100%
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  * {
+    width: 100%
+  }
+}-->

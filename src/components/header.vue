@@ -45,7 +45,7 @@
     </article>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
       <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
-      <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is weighted and guarantees the shortest path! It is slower than Dijkstra's but more versatile, as it it is capable of handling grpahs in which some of the edge weights are negative numbers.</p>
+      <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is weighted and guarantees the shortest path! It is slower than Dijkstra's but more versatile, capable of handling graphs in which some of the edge weights are negative numbers.</p>
 
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -103,7 +103,9 @@ export default {
   font-size: 55px;
   margin: 0px;
   color: rgba(48, 46, 46, 0.979);
+  
 }
+
 #ba {
   margin-top: 18px;
   margin-left: 50px;
@@ -146,11 +148,13 @@ export default {
 #header {
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: space-between;
   margin-top: 20px;
   padding: 10px;
-  /* margin-left: -10px;
-  margin-right: -10px; */
+  width: 100%;
+
+  
 }
 .select {
   -webkit-appearance: button;
@@ -195,6 +199,7 @@ export default {
   align-items: center;
   margin-left: 60px;
   margin-right: 60px;
+  box-sizing: border-box;
 }
 h4 {
   font-size: 20px;
@@ -258,6 +263,38 @@ article {
   /* background: lightgray; */
   margin-right: 4px;
   margin-top: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Extra small devices (phones, 600px and down) */
+  #h {
+    width: 100%;
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  #h {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Medium devices (landscape tablets, 768px and up) */
+  #h {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Large devices (laptops/desktops, 992px and up) */
+  #h {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  #h {
+    width: 100%
+  }
 }
 </style>
 
