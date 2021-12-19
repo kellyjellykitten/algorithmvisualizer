@@ -5,7 +5,6 @@
     <slot name="button"></slot>
     <br />
     <slot name="description"></slot>
-    <p>Click "Instant Path" for a quick path</p>
     <br />
     <slot name="controls"></slot>
     <br />

@@ -1,7 +1,7 @@
 <template>
   <div id="foot">
-    <a href="#" target="_blank" style="text-decoration: none; color: inherit;"><div id="logo"></div></a>
-    <div>by </div>
+    <a href="https://github.com/kellyjellykitten/algorithmvisualizer/tree/modaltest2" target="_blank" title="GitHub" style="text-decoration: none; color: inherit;"><div id="logo"></div></a>
+    <div>by Kelly Lloyd</div>
   </div>
 </template>
 

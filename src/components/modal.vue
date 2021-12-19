@@ -12,49 +12,49 @@
                 <div v-if="page == 1">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the first page!
+                            Selecting an Algorithm
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 2">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the second page!
+                            Adding Walls
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 3">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the third page!
+                            Moving Nodes
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 4">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the fourth page!
+                            Visualizing and More
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 5">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the fifth page!
+                            Clearing the Path
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 6">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the sixth page!
+                            Clearing the Canvas
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 7">
                     <div class="modal-header">
                         <slot name="header">
-                            This is the seventh page!
+                            Enjoy!
                         </slot>
                     </div>
                 </div>
@@ -63,49 +63,55 @@
                 <div v-if="page == 1">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the first body!
+                            Choose an algorithm from the drop-down menu at the top right of page. <br>
+                            Note that some algorithms are unweighted, while others are weighted. <br>
+                            Unweighted algorithms do not take turns into account, whereas weighted ones do. <br> 
+                            Additionally, not all algorithms guarantee the shortest path.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 2">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the second body!
+                            Click on the grid and move the pointer around the draw a wall.<br>
+                            Click the mouse button again to stop drawing.<br>
+                            Walls are impenetrable, meaning that a path cannot cross through them.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 3">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the third body!
+                            Click and drag the start and target nodes to move them.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 4">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the fourth body!
+                            Click "Visualize" to see the algorithm working.<br>
+                            Click "Instant Path" to get a quick path.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 5">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the fifth body!
+                            Click "Clear Path" to clear only the path and visited nodes.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 6">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the sixth body!
+                            Click "Clear Canvas" to clear the walls, path, and visited nodes.
                         </slot>
                     </div>
                 </div>
                 <div v-if="page == 7">
                     <div class="modal-body">
                         <slot name="body">
-                            This is the seventh body!
+                            View this tutorial again by clicking "View Tutorial" on the home page.
                         </slot>
                     </div>
                 </div>
@@ -231,16 +237,25 @@
   
 }
 
-.modal-header,
-.modal-footer {
+.modal-header {
     padding: 15px;
     display: flex;
     justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .modal-body {
     display: flex;
     padding: 20px 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.modal-footer {
+    padding: 15px;
+    display: flex;
     justify-content: center;
 }
 
@@ -255,7 +270,7 @@
 i {
     right: 0;
     top: 0;
-    font-size: 20px;
+    font-size: 35px;
     cursor: pointer;
 }
 i:hover {

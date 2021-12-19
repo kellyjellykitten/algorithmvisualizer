@@ -8,8 +8,7 @@
           <option style="color: #4fc08d;" hidden>{{ algorithm }}</option>
           <option>Breadth First Search</option>
           <option>Depth First Search</option>
-          <option>Dijkstra's Algorithm</option>
-          <option>A* Algorithm</option>
+          <option>Bellman-Ford Algorithm</option>
         </select>
         <br />
         <br />

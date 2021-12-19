@@ -3,9 +3,9 @@
     <div id="header">
       <a
         style="text-decoration: none; color: inherit;"
-        href="https://github.com/Tinku10/pathfinding-visualizer/tree/alt-design"
+        href="https://github.com/kellyjellykitten/algorithmvisualizer/tree/modaltest2"
         target="_blank"
-        ><button><b>GITHUB</b></button></a
+        ><button class="button button1"><b>GITHUB</b></button></a
       >
 
       <div id="main">
@@ -17,23 +17,23 @@
       <span id="sel"><slot name="select"></slot></span>
     </div>
     
-    <button class="modalbutton" id="show-modal" @click="showModal = true">Open Tutorial!</button>
+    <button class="button button2" id="show-modal" @click="showModal = true">View Tutorial</button>
     <transition name="modal">
       <Modal v-if="showModal" @close="showModal = false"/>
     </transition>
 
     <article>
       <section>
-        <h4>Select an algorithm</h4>
+        <h4>Select an Algorithm</h4>
         <p class="content">
-          Try different algorithms from the dropdown to see its working.
+          Try different algorithms from the drop-down menu.
         </p>
       </section>
       <section>
-        <h4>Put obstacles</h4>
+        <h4>Place Walls</h4>
         <p class="content">
-          Obstacles can be inserted in the path to see how the algorithm
-          resolves around these obstacles. It is purely optional.
+          Walls can be inserted in the path to see how the algorithm
+          resolves around these obstacles.
         </p>
       </section>
       <section>
@@ -44,18 +44,18 @@
       </section>
     </article>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target="_blank"><img src="../../public/wikipedia.png" ></a> 
-      <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is slow, but more versatile</p>
+      <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
+      <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is weighted and guarantees the shortest path! It is slower than Dijkstra's but more versatile, as it it is capable of handling grpahs in which some of the edge weights are negative numbers.</p>
 
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Breadth First Search'" href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank"><img src="../../public/wikipedia.png" ></a> 
-      <p id="note" v-if="alg == 'Breadth First Search'">This algorithm is very fast, but can only be applied to unweighted graph</p>
+      <a id="wiki" v-if="alg == 'Breadth First Search'" href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
+      <p id="note" v-if="alg == 'Breadth First Search'">This algorithm is unweighted and guarantees the shortest path!</p>
 
     </div>
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-      <a id="wiki" v-if="alg == 'Depth First Search'" href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank"><img src="../../public/wikipedia.png" ></a> 
-      <p id="note" v-if="alg == 'Depth First Search'">This algorithm is slower, only good if the graph is mostly occupied</p>
+      <a id="wiki" v-if="alg == 'Depth First Search'" href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
+      <p id="note" v-if="alg == 'Depth First Search'">This algorithm is unweighted and does not guarantee the shortest path! Works best if the graph is mostly occupied.</p>
 
     </div>
 
@@ -111,45 +111,40 @@ export default {
   margin-top: 18px;
   margin-left: 50px;
 }
-button {
-  width: 140px;
-  height: 40px;
+.button {
+  
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
   border-radius: 2em;
   cursor: pointer;
+  border: 1px solid #4fc08d;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  
+  color: #4fc08d;
+  margin: none;
+  outline: none;
+  align-items: flex-start;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.button1 {
+  width: 140px;
+  height: 40px;
+  text-indent: 2em;
   background: url("../../public/github (1).png");
   background-position: 5px;
   background-repeat: no-repeat;
-  /* box-sizing: border-box; */
-  border: 1px solid #4fc08d;
-  text-align: center;
-  /* justify-content:center; */
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #fff;
-  /* padding: 0.75em 2em; */
-  /* display: inline-block; */
-  color: #4fc08d;
-  font-size: 15px;
-  background-color: white;
-  margin: none;
-  outline: none;
 }
-.modalbutton {
-  width: 200px;
-  height: 25px;
-  border-radius: 2em;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  border: 1px solid #4fc08d;
-  text-align: center;
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
+.button2 {
   background-color: #fff;
-  color: #4fc08d;
+  padding: 15px 32px;
   font-size: 25px;
-  background-color: white;
-  margin: 10px;
-  padding: 10px;
+  font-weight: bold;
 }
 #header {
   display: flex;
@@ -268,3 +263,47 @@ article {
   margin-top: 3px;
 }
 </style>
+
+
+
+<!-- button {
+  width: 140px;
+  height: 40px;
+  border-radius: 2em;
+  cursor: pointer;
+  background: url("../../public/github (1).png");
+  background-position: 5px;
+  background-repeat: no-repeat;
+  /* box-sizing: border-box; */
+  border: 1px solid #4fc08d;
+  text-align: center;
+  /* justify-content:center; */
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  /* padding: 0.75em 2em; */
+  /* display: inline-block; */
+  color: #4fc08d;
+  font-size: 15px;
+  background-color: white;
+  margin: none;
+  outline: none;
+}
+.modalbutton {
+  width: 200px;
+  height: 25px;
+  border-radius: 2em;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  border: 1px solid #4fc08d;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  color: #4fc08d;
+  font-size: 25px;
+  font-weight:bold;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+} -->
