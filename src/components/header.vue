@@ -97,15 +97,12 @@ export default {
 
 <style scoped>
 #heading {
-  /* text-align: center; */
-  /* padding: 8px; */
+  padding: 8px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: lighter;
   font-size: 55px;
   margin: 0px;
   color: rgba(48, 46, 46, 0.979);
-  /* background-color: rgb(17, 0, 27); */
-  /* background-color: rgba(7, 7, 7, 0.863); */
 }
 #ba {
   margin-top: 18px;
@@ -129,7 +126,7 @@ export default {
   transition-duration: 0.4s;
 }
 .button:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
 }
 .button1 {
