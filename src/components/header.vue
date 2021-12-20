@@ -60,7 +60,7 @@
     </div>
 
     <p id="note" v-if="alg == 'SELECT AN ALGORITHM'">This graph is unweighted and travelling can be done only in UP🠝 DOWN🠟 LEFT🠜 RIGHT🠞</p>
-
+    <p id="note">Dijkstra's Algorithm and A* Search Coming Soon!</p>
 
 
   </div>
@@ -265,37 +265,7 @@ article {
   margin-top: 3px;
 }
 
-@media only screen and (max-width: 600px) {
-  /* Extra small devices (phones, 600px and down) */
-  #h {
-    width: 100%;
-    background-color: red;
-  }
-}
-@media only screen and (min-width: 600px) {
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  #h {
-    width: 100%
-  }
-}
-@media only screen and (min-width: 768px) {
-  /* Medium devices (landscape tablets, 768px and up) */
-  #h {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  /* Large devices (laptops/desktops, 992px and up) */
-  #h {
-    width: 100%
-  }
-}
-@media only screen and (min-width: 992px) {
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  #h {
-    width: 100%
-  }
-}
+
 </style>
 
 
@@ -340,4 +310,36 @@ article {
   background-color: white;
   margin: 10px;
   padding: 10px;
-} -->
+} 
+
+@media only screen and (max-width: 600px) {
+  /* Extra small devices (phones, 600px and down) */
+  #h {
+    width: 100%;
+    /* background-color: red; */
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  #h {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Medium devices (landscape tablets, 768px and up) */
+  #h {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Large devices (laptops/desktops, 992px and up) */
+  #h {
+    width: 100%
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  #h {
+    width: 100%
+  }
+}-->

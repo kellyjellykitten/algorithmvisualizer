@@ -393,6 +393,10 @@ p {
   padding: 1px;
   width: 100%;
 }
+
+</style>
+
+<!--
 @media only screen and (max-width: 600px) {
   /* Extra small devices (phones, 600px and down) */
   body {
@@ -420,39 +424,6 @@ p {
 @media only screen and (min-width: 992px) {
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   body {
-    width: 100%
-  }
-}
-</style>
-
-<!--
-@media only screen and (max-width: 600px) {
-  /* Extra small devices (phones, 600px and down) */
-  * {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  * {
-    width: 100%
-  }
-}
-@media only screen and (max-width: 768px) {
-  /* Medium devices (landscape tablets, 768px and up) */
-  * {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 992px) {
-  /* Large devices (laptops/desktops, 992px and up) */
-  * {
-    width: 100%
-  }
-}
-@media only screen and (max-width: 992px) {
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  * {
     width: 100%
   }
 }-->
