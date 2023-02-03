@@ -43,11 +43,11 @@
         </p>
       </section>
     </article>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <!-- <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
       <a id="wiki" v-if="alg == 'Bellman-Ford Algorithm'" href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
       <p id="note" v-if="alg == 'Bellman-Ford Algorithm'">This algorithm is weighted and guarantees the shortest path! It is slower than Dijkstra's but more versatile, capable of handling graphs in which some of the edge weights are negative numbers.</p>
 
-    </div>
+    </div> -->
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
       <a id="wiki" v-if="alg == 'Breadth First Search'" href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank" title="Wikipedia"><img src="../../public/wikipedia.png" ></a> 
       <p id="note" v-if="alg == 'Breadth First Search'">This algorithm is unweighted and guarantees the shortest path!</p>
@@ -60,7 +60,7 @@
     </div>
 
     <p id="note" v-if="alg == 'SELECT AN ALGORITHM'">This graph is unweighted and travelling can be done only in UP🠝 DOWN🠟 LEFT🠜 RIGHT🠞</p>
-    <p id="note">Dijkstra's Algorithm and A* Search Coming Soon!</p>
+    
 
 
   </div>
@@ -105,13 +105,11 @@ export default {
   color: rgba(48, 46, 46, 0.979);
   
 }
-
 #ba {
   margin-top: 18px;
   margin-left: 50px;
 }
 .button {
-  
   text-align: center;
   display: inline-block;
   font-size: 16px;
@@ -153,12 +151,11 @@ export default {
   margin-top: 20px;
   padding: 10px;
   width: 100%;
-
   
 }
 .select {
-  -webkit-appearance: button;
-  -moz-appearance: button;
+  /* -webkit-appearance: button;
+  -moz-appearance: button; */
   /* -webkit-user-select: none;
   -moz-user-select: none; */
   -webkit-padding-end: 16px;

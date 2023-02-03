@@ -8,7 +8,6 @@
           <option style="color: #4fc08d;" hidden>{{ algorithm }}</option>
           <option>Breadth First Search</option>
           <option>Depth First Search</option>
-          <option>Bellman-Ford Algorithm</option>
         </select>
         <br />
         <br />
@@ -228,43 +227,8 @@ export default {
       
       
     }
+  }      
   }
-  
-          // i ++;
-          // if(i>800){
-          //   if(this.path != null){
-          //     this.noPath = false;
-          //     clearInterval(this.interval);
-          //   }
-          // }
-          // }
-        
-     
-  }
-  // drag(){
-  //   let s = document.getElementById(String(this.sx)+String("-")+String(this.sy));
-  //   s.className = "unvisited";
-  //   for (let i = 0; i <= 21; i++) {
-  //     for (let j = 0; j <= 38; j++) {
-  //       let id = document.getElementById(String(i) + String("-") + String(j));
-  //       id.onmouseup = function drop(){
-  //         id.className = "sd";
-  //         var ar = id.id.split("-");
-  //         this.sx = parseInt(ar[0]);
-  //         this.sy = parseInt(ar[1]);
-  //       }
-  //     }
-  //   }
-  // },
-  // update(){
-  //   console.log("called");
-  //   let s = document.getElementById(String(this.sx)+String("-")+String(this.sy));
-  //   s.onmousedown
-  //   return true;
-  // // dispPath(event) {
-  // //   this.path = event;
-  // }
-  // }
 };
 </script>
 
@@ -305,6 +269,7 @@ export default {
   border: 1px solid #4fc08d;
   border-radius: 2em;
   outline: none;
+  
 }
 #nc {
   position: relative;
